@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Cache-Control" content="no-cache">
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>我的记录</title>
+        <script type="text/javascript">
+            (function (doc, win) {
+                var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if (clientWidth < 320) {
+                            clientWidth = 320;
+                        }
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    };
+                if (!doc.addEventListener) return;
+                win.addEventListener(resizeEvt, recalc, false);
+                recalc();
+            })(document, window);
+        </script>
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/sub.css">
+    </head>
+    <body>
+        <div class="main">
+            <div class="content">
+                <header>
+                    <img src="img/sub/T_wdjl.png">
+                </header>
+                <div class="default">
+                    <img src="img/sub/default.png" ><br>
+                    暂无数据
+                </div>
+                <div id="dataList" style="display:none;">
+                    <!--  -->
+                </div>
+            </div>
+        </div>
+        <div class='loadDiv'><div id="loadDiv_1"></div></div>
+        <script src="https://static.leader001.cn/hd/publicJs/jquery.min.js"></script>
+        <script src="https://static.leader001.cn/hd/publicJs/util.js"></script>
+        <script src="js/util/root.js"></script>
+        <script src="js/wdjl.js"></script>
+    </body>
+</html> 

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Cache-Control" content="no-cache">
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>今日排行</title>
+        <script type="text/javascript">
+            (function (doc, win) {
+                var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if (clientWidth < 320) {
+                            clientWidth = 320;
+                        }
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    };
+                if (!doc.addEventListener) return;
+                win.addEventListener(resizeEvt, recalc, false);
+                recalc();
+            })(document, window);
+        </script>
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/sub.css">
+    </head>
+    <body>
+        <div class="main">
+            <div class="content">
+                <header>
+                    <img src="img/sub/T_jrph.png">
+                    <br>(每5分钟更新)
+                </header>
+                <time>
+                    <span class="left" id="previous" style="display:none;"><img src="img/sub/left.png" style="width:.19rem;"></span>
+                    <span id="todayDate" class="today" style="display:none1;"></span>
+                    <span id="yesterdayDate" class="yesterday" style="display:none;"></span>
+                    <span id="beforeyesterdayDate" class="beforeyesterday" style="display:none;"></span>
+                    <span class="right" id="next" style="display:none;"><img src="img/sub/right.png" style="width:.19rem;"></span>
+                </time>
+                <!-- 今日排行 -->
+                <div id="today" class="today" style="display:none1;">
+                    <div class="default">
+                        <img src="img/sub/default.png" ><br>
+                        暂无数据
+                    </div>
+                </div>
+                <!-- 昨天排行 -->
+                <div id="yesterday" class="yesterday" style="display:none;">
+                    <div class="default">
+                        <img src="img/sub/default.png" ><br>
+                        暂无数据
+                    </div>
+                </div>
+                <!-- 前天排行 -->
+                <div id="beforeyesterday" class="beforeyesterday" style="display:none;">
+                    <div class="default">
+                        <img src="img/sub/default.png" ><br>
+                        暂无数据
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='loadDiv'><div id="loadDiv_1"></div></div>
+        <script src="https://static.leader001.cn/hd/publicJs/jquery.min.js"></script>
+        <script src="https://static.leader001.cn/hd/publicJs/util.js"></script>
+        <script src="js/util/root.js"></script>
+        <script src="js/jrph.js?v5"></script>
+    </body>
+</html> 

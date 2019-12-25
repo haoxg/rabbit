@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Cache-Control" content="no-cache">
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>寻找玉兔得千元</title>
+        <script type="text/javascript">
+            (function (doc, win) {
+                var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if (clientWidth < 320) {
+                            clientWidth = 320;
+                        }
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    };
+                if (!doc.addEventListener) return;
+                win.addEventListener(resizeEvt, recalc, false);
+                recalc();
+            })(document, window);
+        </script>
+        <script>
+           window.onload=function(){
+                var oLoadingWrap=document.getElementById('loadingWrap');
+                var oLoading=document.getElementById('loading');
+                var arr=[
+                'img/alertBg.png',
+                'img/alertBtn0.png',
+                'img/alertBtn1.png',
+                'img/alertBtn-1.png',
+                'img/alertBtnLeft.png',
+                'img/alertFooter.png',
+                'img/alertHeader.png',
+                'img/alertIcon1.png',
+                'img/alertIcon2.png',
+                'img/alertIcon3.png',
+                'img/bg.png',
+                'img/block1.png',
+                'img/block2.png',
+                'img/block3.png',
+                'img/block6.png',
+                'img/cloud.png',
+                'img/countdownBg.jpg',
+                'img/gameScoreBg.png',
+                'img/hdgz.png',
+                'img/jrph.png',
+                'img/wdjl.png',
+                'img/jintuzi1.gif',
+                'img/jintuzi2.gif',
+                'img/jintuzi3.gif',
+                'img/jintuzi4.gif',
+                'img/jintuzi5.gif',
+                'img/jintuzi6.gif',
+                'img/jintuzi1.gif',
+                'img/jintuzi1.gif',
+                'img/tuzi0.gif',
+                'img/tuzi1.gif',
+                'img/tuzi2.gif',
+                'img/tuzi3.gif',
+                'img/tuzi4.gif',
+                'img/tuzi5.gif',
+                'img/tuzi6.gif',
+                'img/star.png',
+                'img/start0.png',
+                'img/start1.png',
+                'img/start2.png',
+                'img/start3.png',
+                'img/start4.png',
+                'img/start5.png',
+                'img/t0.png',
+                'img/t1.png',
+                'img/t2.png',
+                'img/t3.png',
+                'img/t0.png',
+                ];
+                var num=0;
+                for(var i=0;i<arr.length;i++){
+                    var oImg=new Image(); //新建一个图片对象
+                    oImg.onload=function(){
+                        num++;   //图片预加载完成，执行onload里面的代码
+                        // oSpan.style.width=num/arr.length*100+'%';//通过图片加载的顺序，来控制进度条的宽度
+                        oLoading.innerHTML = parseInt(num/arr.length*100)+'%';
+                        if(num == arr.length){
+                            setTimeout(function(){
+                                oLoadingWrap.className = 'hide';
+                            },300);
+                        }
+                    }
+                    oImg.src=arr[i];   //给图片对象添加路径  注意这条代码必须加在onload的后面
+                }
+            }
+        </script>
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/index.css?v12">
+    </head>
+    <body>
+        <!-- 加载动画 -->
+        <div id="loadingWrap">
+            <div>
+                <img src="img/loading.gif" style="width:2.17rem;display: inline-block"><br>
+                <span id="loading">0%</span>
+            </div>
+        </div>
+        <div id="app">
+            <!-- 背景音乐 -->
+            <audio id="soundBg1" autobuffer="autobuffer"  autoplay="autoplay" loop="loop">
+                <source src="./bg1.mp3" controls="">
+            </audio>
+            <audio id="soundBg2" autobuffer="autobuffer" loop="loop" preload="auto">
+                <source src="./bg2.mp3" controls="">
+            </audio>
+            <!-- 小星星 -->
+            <i class="star no1"></i>
+            <i class="star no2"></i>
+            <i class="star no3"></i>
+            <!-- 玉兔 -->
+            <div class="rabbit-hole jade" style="display:none">
+                <audio class="sound" controls="" preload="auto">
+                    <source src="./1.mp3" controls="">
+                </audio> 
+                <div class="rabbit">
+                    <div class="lift"></div>
+                    <div class="score"></div>
+                </div>
+                <div class="block"></div>
+            </div>
+            <!-- 金兔 -->
+            <div class="rabbit-hole gold" style="display:none">
+                <audio class="sound" controls="" preload="auto">
+                    <source src="./2.mp3" controls="">
+                </audio> 
+                <div class="rabbit">
+                    <div class="lift"></div>
+                    <div class="score"></div>
+                </div>
+                <div class="block"></div>
+            </div>
+            <!-- 游戏区 -->
+            <div id="gameZone">
+            </div>
+            <!-- 主页面元素 -->
+            <div id="main">
+                <div class="game-countdown">
+                    <time class="time"></time>
+                    <div class="progress"><span></span></div>
+                </div>
+                <div class="game-score"><span>0</span></div>
+                <ul class="operation-panel">
+                    <li class="jrph" onclick="addClick('zqxyt-ph')"><a href="./jrph.html?h5ControlTitle=true&backH5Control=true&newWebview=true"></a></li>
+                    <li class="wdjl" onclick="addClick('zqxyt-jl')"><a href="./wdjl.html?h5ControlTitle=true&backH5Control=true&newWebview=true"></a></li>
+                    <li class="hdgz" onclick="addClick('zqxyt-gz')"><a href="./hdgz.html?h5ControlTitle=true&backH5Control=true&newWebview=true"></a></li>
+                </ul>
+                <div class="tuzi">
+                    <img src="img/tuzi0.gif"/>
+                </div>
+                <a id="start-game" class="s5" onclick="start()"></a>
+                <!-- alert -->
+                <div class="alert">
+                    <div class="header"></div>
+                    <div class="body">
+                        <div>
+                            <span class="icon2"></span>
+                            <span>x</span>
+                            <span id="gameCount">0</span>
+                        </div>
+                        <div>
+                            <span id="different" class="icon1"></span>
+                            <span>x</span>
+                            <span id="gameScore">0</span>
+                        </div>
+                        <span style="visibility: hidden;">今日再购买80元可获得2次机会</span>
+                        <a id="alertCancel"class="left"></a>
+                        <a id="againStart" class="right"></a>
+                    </div>
+                    <div class="footer"></div>
+                </div>
+                <!-- 没什么卵用的云彩 -->
+                <div class="cloud"></div>
+            </div>
+        </div>
+        <!-- js -->
+        <script src="js/util/jquery.min.js"></script>
+        <script src="js/util/util.js"></script>
+        <script src="js/util/root.js"></script>
+        <script src="js/util/dialog.js"></script>
+        <script src="js/game.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>

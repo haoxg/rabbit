@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Cache-Control" content="no-cache">
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>活动规则</title>
+        <script type="text/javascript">
+            (function (doc, win) {
+                var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if (clientWidth < 320) {
+                            clientWidth = 320;
+                        }
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    };
+                if (!doc.addEventListener) return;
+                win.addEventListener(resizeEvt, recalc, false);
+                recalc();
+            })(document, window);
+        </script>
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/sub.css">
+    </head>
+    <body>
+        <div class="main">
+            <div class="content">
+                <header>
+                    <img src="img/sub/T_hdgz.png">
+                </header>
+                <section>
+                    <p>1.活动时间：2018年9月21日-2018年9月24日</p>
+                    <p>2.活动期间内，每个用户每天可免费获得3次寻找玉兔机会。</p>
+                    <p>3.每次寻找玉兔的时间为15秒，屏幕中会随机出现玉兔和金兔，点击到玉兔可积累一只玉兔，点击到金兔可积累多只玉兔。</p>
+                    <p>4.每次寻找玉兔可获得同等数量的<span class="gold">金币</span>，所得<span class="gold">金币</span>为不可得兑换<span class="gold">金币</span>。</p>
+                    <p>5.每天获得玉兔数前30名的用户可额外获得京东卡奖励，玉兔数相同则按最后一次寻找玉兔时间的先后排序，排行榜每5分钟更新一次。</p>
+                    <p>6.第1~5名可获得1000元京东卡奖励，第6~15名可获得500元京东卡奖励，第16~30名可获得100元京东卡奖励，客服将在次日12点前与中奖用户联系并发放奖品。</p>
+                    <img src="img/sub/jingdong.jpg">
+                    <p>7.当天未使用的寻找玉兔机会，次日0点失效。</p>
+                    <p>8.开始游戏前需确认网络状况良好，一但开始游戏，将会扣除1次寻找玉兔的机会。</p>
+                    <p>9.任何机器人、爬虫软件、刷屏软件或其他自动方式访问参与本活动，一经发现，本平台有权要求返还活动奖励，并停封账号。</p>
+                    <p>10.在法律范围内，本平台保留本活动的最终解释权。</p>
+                    <p class="ending">如有疑问，请咨询客服热线：<span class="telephone">400-0100-010</span>。</p>
+                </section>
+            </div>
+        </div>
+        <script src="https://static.leader001.cn/hd/publicJs/jquery.min.js"></script>
+        <script src="https://static.leader001.cn/hd/publicJs/util.min.js"></script>
+        <script>
+            var util = new publicMethod();
+            var productName = util.getUrlParam("productName")|| util.getCookie("productName");
+            // 区分赢彩设置title
+            util.sendToClient("寻找玉兔得千元");
+            // 区分
+            if(productName.indexOf('yc') >= 0){
+                $('.gold').text('金豆');
+                $('.telephone').text('400-0018-666');
+            }
+            if(productName.indexOf('lz') >= 0){
+                $('.telephone').text('400-620-1118');
+            }
+            
+            //返回逻辑
+            function headBack(){
+            window.location.href="qmcai://quit?mainClient=true" ;
+            }
+            window.headBack = headBack ;
+        </script>
+    </body>
+</html> 
